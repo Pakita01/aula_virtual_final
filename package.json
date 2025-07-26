@@ -1,0 +1,31 @@
+{
+  "name": "backend-todoapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind-build": "npx tailwindcss -i ./input.css -o ./views/styles/output.css --watch",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gustavoprograms",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "tailwindcss": "^3.4.17"
+  }
+}
