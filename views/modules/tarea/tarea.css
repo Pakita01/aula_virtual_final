@@ -284,3 +284,125 @@ h1::after {
         margin: 10% auto;
     }
 }
+@media screen and (max-width: 768px) {
+    /* Reset y base para móvil */
+    * {
+        font-size: 16px;
+    }
+    
+    body {
+        padding: 0;
+        line-height: 1.5;
+    }
+    
+    /* Encabezados */
+    h1 {
+        font-size: 1.8rem;
+        padding: 1rem 0.5rem;
+        animation: none;
+    }
+    
+    h1::after {
+        display: none;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+        margin: 0;
+        border-bottom: none;
+    }
+    
+    /* Cards y contenedores */
+    .section-card {
+        padding: 1rem;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 1rem;
+    }
+    
+    .section-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Formularios */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .form-grid label {
+        margin-top: 0.5rem;
+    }
+    
+    .form-grid input[type="text"],
+    .form-grid input[type="number"],
+    .form-grid input[type="date"],
+    .form-grid select,
+    .form-grid textarea {
+        padding: 0.8rem;
+        width: 100%;
+    }
+    
+    /* Botones */
+    .btn {
+        padding: 1rem;
+        width: 100%;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
+    
+    .btn-icon {
+        font-size: 1.4rem;
+        padding: 0.5rem;
+    }
+    
+    /* Tablas */
+    .table-container {
+        padding: 0.5rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    th, td {
+        padding: 0.8rem;
+        min-width: 120px;
+    }
+    
+    /* Tabs */
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 0.8rem;
+        flex: 1 1 50%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    /* Ajustes específicos */
+    #log {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    
+    /* Optimizaciones para touch */
+    button, input, select, textarea {
+        touch-action: manipulation;
+    }
+    
+    /* Eliminar hover effects en móvil */
+    tbody tr:hover {
+        background-color: inherit;
+    }
+    
+    .btn:hover, .btn-icon:hover {
+        opacity: 1;
+    }
+}
