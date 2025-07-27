@@ -602,3 +602,120 @@ button:active {
         min-width: 200px; /* Restaura el min-width */
         width: auto;
     }}
+
+    @media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        padding: 1rem 0.5rem;
+        animation: none;
+    }
+
+    h1::after {
+        display: none;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+        margin: 0;
+    }
+
+    /* Botones */
+    button {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    #loadLeccionesBtn {
+        margin: 1.5rem auto;
+        animation: none;
+    }
+
+    /* Lista de lecciones */
+    #leccion-list {
+        padding: 1rem;
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+        box-shadow: none;
+        border: none;
+    }
+
+    #leccion-list:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+    #lecciones-ul {
+        margin-top: 1rem;
+    }
+
+    #lecciones-ul li {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #lecciones-ul li:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .leccion-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Formulario */
+    .add-leccion {
+        padding: 1rem;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    #addLeccionForm {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    #addLeccionForm input,
+    #addLeccionForm select {
+        padding: 0.8rem;
+    }
+
+    /* Botones de acción */
+    #edit, #delete {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes específicos para móvil */
+    #addLeccionForm button[type="submit"] {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mantenemos las animaciones para móvil */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
