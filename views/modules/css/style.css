@@ -1,17 +1,16 @@
-/* Variables de color - Paleta azul */
+/* Variables de color */
 :root {
-    --primary-color: #1a73e8;
-    --primary-dark: #0d47a1;
-    --primary-light: #63a4ff;
-    --secondary-color: #4285f4;
-    --accent-color: #82b1ff;
-    --text-primary: #212121;
-    --text-secondary: #757575;
-    --background: #f5f9ff;
+    --primary-dark: #005ee1;
+    --primary: #2c5282;
+    --primary-light: #4299e1;
+    --primary-extra-light: #ebf8ff;
+    --text-dark: #1a202c;
+    --text-light: #718096;
+    --background: #f8fafc;
     --white: #ffffff;
-    --gray-light: #f5f5f5;
-    --gray-medium: #e0e0e0;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --success: #48bb78;
+    --error: #f56565;
+    --warning: #ed8936;
 }
 
 /* Reset y estilos base */
@@ -19,65 +18,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
     background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    /*padding: 20px;*/
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-.status.completed {
-    background-color: #d4edda;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
-.status {
-    background-color: #f8d7da;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-#log{
-    color:white;
-}
-button {
-    background-color: white;
-    color:rgb(50, 86, 245);
-    border: none;
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 3px 6px rgba(66, 153, 225, 0.2);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-button:hover{
-    background-color: #cfe3ff;
-}
-h2 {
-    font-size: 1.8rem;
-    border-bottom: 2px solid var(--primary-extra-light);
-    margin-top: 1.5rem;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 h1, h2 {
@@ -108,422 +65,32 @@ h1::after {
     background: linear-gradient(90deg, var(--primary-light), var(--primary));
     border-radius: 4px;
 }
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.btn-level {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: 2px solid var(--secondary-color);
-    margin-top: 15px;
-}
-
-.btn-level:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.btn-login {
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    margin-right: 10px;
-}
-
-.btn-login:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-register {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-register:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-}
-
-.btn-large {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    text-align: center;
-    color: var(--primary-dark);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: var(--accent-color);
-    margin: 15px auto;
-    border-radius: 2px;
-}
-
-.section-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-/* Navbar */
-.header {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-}
-
-.logo i {
-    margin-right: 10px;
+h2 {
     font-size: 1.8rem;
-    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-extra-light);
+    margin-top: 1.5rem;
 }
 
-.nav-links {
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    font-weight: 600;
-    position: relative;
-    padding: 5px 0;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-.auth-buttons {
-    display: flex;
-    align-items: center;
-}
-
-.hamburger {
-    display: none;
+/* Botones */
+button {
+    background-color: white;
+    color:rgb(50, 86, 245);
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
     cursor: pointer;
-}
-
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-dark);
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 3px 6px rgba(66, 153, 225, 0.2);
+    display: inline-flex;
     align-items: center;
-    padding: 150px 0 100px;
-    min-height: 90vh;
+    justify-content: center;
+    gap: 8px;
 }
-
-.hero-content {
-    flex: 1;
-    padding-right: 50px;
-}
-
-.hero-image {
-    flex: 1;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-dark);
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-}
-
-/* Levels Section */
-.levels-section {
-    padding: 100px 0;
-    background-color: var(--white);
-}
-
-.levels-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.level-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 30px;
-    text-align: center;
-    border-top: 4px solid var(--primary-color);
-}
-
-.level-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.level-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.level-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--primary-dark);
-}
-
-.level-image {
-    height: 200px;
-    overflow: hidden;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
-.level-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.level-card:hover .level-image img {
-    transform: scale(1.05);
-}
-
-.level-features {
-    margin: 20px 0;
-    text-align: left;
-}
-
-.level-features li {
-    padding: 8px 0;
-    position: relative;
-    padding-left: 25px;
-}
-
-.level-features li::before {
-    content: '\f00c';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
-
-/* Method Section */
-.method-section {
-    padding: 100px 0;
-    background-color: var(--background);
-}
-
-.method-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.step {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.step:hover {
-    transform: translateY(-5px);
-}
-
-.step-number {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 5rem;
-    font-weight: 700;
-    color: rgba(26, 115, 232, 0.1);
-    z-index: 0;
-}
-
-.step h3 {
-    font-size: 1.5rem;
-    margin: 20px 0 15px;
-    color: var(--primary-dark);
-    position: relative;
-    z-index: 1;
-}
-
-.step p {
-    color: var(--text-secondary);
-    position: relative;
-    z-index: 1;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-    padding: 100px 0;
-    background-color: var(--white);
-}
-
-.testimonials-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.testimonial-card {
-    background-color: var(--background);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
-.testimonial-content {
-    font-style: italic;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.testimonial-content::before {
-    content: '\201C';
-    font-size: 4rem;
-    color: var(--accent-color);
-    position: absolute;
-    left: -15px;
-    top: -20px;
-    opacity: 0.3;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid var(--accent-color);
-}
-
-.testimonial-author h4 {
-    font-size: 1.1rem;
-    color: var(--primary-dark);
-}
-
-.testimonial-author span {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* CTA Section */
-.cta-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
-    text-align: center;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.cta-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
+button:hover{
+    background-color: #cfe3ff;
 }
 
 #edit{
@@ -541,253 +108,614 @@ h1::after {
     cursor: pointer;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--primary-dark);
-    color: var(--white);
-    padding: 70px 0 0;
+
+button:active {
+    transform: translateY(0);
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background-color: var(--accent-color);
-}
-
-.footer-section.about p {
-    margin-bottom: 20px;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-dark);
-}
-
-.footer-section.links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section.links ul li a {
+#loadLeccionesBtn {
     display: block;
+    margin: 2.5rem auto;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Lista de lecciones */
+#leccion-list {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2.5rem;
     transition: all 0.3s ease;
-    padding: 5px 0;
+    border: 1px solid var(--primary-extra-light);
 }
 
-.footer-section.links ul li a:hover {
-    color: var(--accent-color);
-    padding-left: 10px;
+#leccion-list:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.footer-section.contact p {
+#lecciones-ul {
+    list-style-type: none;
+    margin-top: 1.5rem;
+}
+
+#lecciones-ul li {
+    padding: 1.25rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--primary-extra-light);
+    border-left: 4px solid var(--primary-light);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#lecciones-ul li:hover {
+    transform: translateX(8px);
+    background-color: #d6eafd;
+    box-shadow: 4px 0 8px rgba(66, 153, 225, 0.15);
+}
+
+#lecciones-ul li:first-child {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.leccion-info {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.leccion-info span {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 4px;
 }
 
-.footer-section.contact i {
-    margin-right: 10px;
-    color: var(--accent-color);
+/* Formulario */
+.add-leccion {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--primary-extra-light);
 }
 
-.footer-bottom {
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
+#addLeccionForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#addLeccionForm input,
+#addLeccionForm select {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+}
+
+#addLeccionForm input:focus,
+#addLeccionForm select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+#addLeccionForm button[type="submit"] {
+    background-color: var(--success);
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#addLeccionForm button[type="submit"]:hover {
+    background-color: #38a169;
 }
 
 /* Animaciones */
-.animate-fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-}
-
-.animate-slide-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 0.8s ease forwards;
-}
-
-.animate-slide-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: slideLeft 0.8s ease forwards;
-}
-
-.animate-slide-right {
-    opacity: 0;
-    transform: translateX(30px);
-    animation: slideRight 0.8s ease forwards;
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse {
-    animation: pulse 2s infinite;
-}
-
 @keyframes fadeIn {
-    to {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes slideUp {
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@keyframes slideLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 @keyframes pulse {
     0% {
         transform: scale(1);
+        box-shadow: 0 3px 6px rgba(66, 153, 225, 0.2);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1.03);
+        box-shadow: 0 6px 12px rgba(66, 153, 225, 0.3);
     }
     100% {
         transform: scale(1);
+        box-shadow: 0 3px 6px rgba(66, 153, 225, 0.2);
     }
 }
 
-/* Estilos responsive */
-@media (max-width: 992px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 120px 0 60px;
-    }
-    
-    .hero-content {
-        padding-right: 0;
-        margin-bottom: 50px;
-    }
-    
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
+/* Efectos de carga */
+.loading {
+    position: relative;
+    overflow: hidden;
+    color: transparent !important;
 }
 
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+    animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification.success {
+    background-color: var(--success);
+}
+
+.notification.error {
+    background-color: var(--error);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;
+    .container {
+        padding: 1.5rem;
     }
     
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: left 0.5s ease;
+    h1 {
+        font-size: 2rem;
     }
     
-    .nav-links.active {
-        left: 0;
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #addLeccionForm {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .nav-links li {
-        margin: 20px 0;
+    #addLeccionForm button[type="submit"] {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    #addLeccionForm {
+        grid-template-columns: 1fr 1fr 1fr auto;
     }
     
-    .auth-buttons {
+    #addLeccionForm button[type="submit"] {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    
+    /* Estilos específicos para el módulo de cursos */
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+#level-filter, #teacher-filter {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 200px;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge.level-principiante {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge.level-intermedio {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.badge.level-avanzado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin: 0;
+}
+
+.no-results {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+}}
+
+.status {
+    padding: 5px 10px;
+    border-radius:5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status.activo {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.inactivo {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status.borrador {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+
+/* Responsive Design */
+@media (max-width: 767px) { /* Usamos 767px para evitar solapamientos con min-width: 768px */
+    body {
+        padding: 10px; /* Reduce el padding del body en móviles */
+    }
+
+    .container {
+        padding: 1rem; /* Reduce el padding del contenedor principal */
+        border-radius: 8px; /* Bordes un poco menos pronunciados */
+    }
+
+    h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para h1 */
+        padding-bottom: 0.8rem;
+    }
+
+    h1::after {
+        width: 80px; /* Línea de h1 más corta en móviles */
+    }
+    
+    h2 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño para h2 */
+    }
+
+    button {
+        padding: 0.7rem 1.5rem; /* Botones un poco más pequeños */
+        font-size: 0.9rem;
+    }
+
+    #leccion-list {
+        padding: 1.5rem; /* Reduce el padding de la lista de lecciones */
+    }
+
+    #lecciones-ul li {
+        padding: 1rem; /* Reduce el padding de cada item de lección */
+        font-size: 0.95rem; /* Ajusta el tamaño de fuente de los ítems */
+    }
+
+    .leccion-info {
+        flex-direction: column; /* Apila la información de la lección en móviles */
+        gap: 8px; /* Reduce el espacio entre ítems */
+        font-size: 0.85rem;
+    }
+
+    .add-leccion {
+        padding: 1.5rem; /* Reduce el padding del formulario */
+    }
+
+    #addLeccionForm {
+        gap: 1rem; /* Reduce el espacio entre campos del formulario */
+    }
+
+    #addLeccionForm input,
+    #addLeccionForm select {
+        padding: 0.8rem 1rem; /* Reduce el padding de inputs/selects */
+        font-size: 0.9rem;
+    }
+
+    /* Estilos específicos para el módulo de cursos en móviles */
+    .filters-container {
+        flex-direction: column; /* Apila los filtros verticalmente */
+        gap: 10px; /* Reduce el espacio entre filtros */
+    }
+
+    .search-box {
+        min-width: unset; /* Elimina el min-width */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    #level-filter, #teacher-filter {
+        width: 100%; /* Los filtros también ocupan todo el ancho */
+        min-width: unset;
+    }
+
+    .form-row {
+        flex-direction: column; /* Apila los grupos de formulario */
+        gap: 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 1.5rem; /* Aumenta el padding para tabletas y escritorios */
+    }
+    
+    h1 {
+        font-size: 2.25rem; /* Ajusta el tamaño de h1 para tabletas */
+    }
+    
+    h2 {
+        font-size: 1.6rem; /* Ajusta el tamaño de h2 para tabletas */
+    }
+
+    #addLeccionForm {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #addLeccionForm button[type="submit"] {
+        grid-column: span 2;
+    }
+
+    /* Restaura estilos para tabletas si es necesario, si fueron afectados por mobile-first */
+    .filters-container {
+        flex-direction: row; /* Vuelve a poner los filtros en fila */
+    }
+    .form-row {
+        flex-direction: row; /* Vuelve a poner los grupos de formulario en fila */
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 2rem; /* Padding estándar para escritorio */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Vuelve al tamaño original de escritorio */
+    }
+    
+    h2 {
+        font-size: 1.8rem; /* Vuelve al tamaño original de escritorio */
+    }
+
+    #addLeccionForm {
+        grid-template-columns: 1fr 1fr 1fr auto; /* Distribución en 3 columnas + auto */
+    }
+    
+    #addLeccionForm button[type="submit"] {
+        grid-column: auto; /* El botón de submit vuelve a su columna */
+        margin-top: 0; /* Elimina el margen superior si no es necesario */
+    }
+    /* Estilos específicos para el módulo de cursos en escritorio */
+    
+
+    .search-box {
+        min-width: 250px; /* Restaura el min-width */
+        width: auto; /* Permite que flexbox decida el ancho */
+    }
+
+    #level-filter, #teacher-filter {
+        min-width: 200px; /* Restaura el min-width */
+        width: auto;
+    }}
+
+    @media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        padding: 1rem 0.5rem;
+        animation: none;
+    }
+
+    h1::after {
         display: none;
     }
-    
-    .hero-title {
-        font-size: 2.5rem;
+
+    h2 {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+        margin: 0;
     }
-    
-    .section-title {
-        font-size: 2rem;
+
+    /* Botones */
+    button {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    #loadLeccionesBtn {
+        margin: 1.5rem auto;
+        animation: none;
+    }
+
+    /* Lista de lecciones */
+    #leccion-list {
+        padding: 1rem;
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+        box-shadow: none;
+        border: none;
+    }
+
+    #leccion-list:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+    #lecciones-ul {
+        margin-top: 1rem;
+    }
+
+    #lecciones-ul li {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #lecciones-ul li:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .leccion-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Formulario */
+    .add-leccion {
+        padding: 1rem;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    #addLeccionForm {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    #addLeccionForm input,
+    #addLeccionForm select {
+        padding: 0.8rem;
+    }
+
+    /* Botones de acción */
+    #edit, #delete {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes específicos para móvil */
+    #addLeccionForm button[type="submit"] {
+        padding: 1rem;
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 576px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-    }
-    
-    .btn-large {
-        padding: 12px 24px;
-    }
+/* Mantenemos las animaciones para móvil */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
